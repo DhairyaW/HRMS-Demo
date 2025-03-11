@@ -1,0 +1,7 @@
+<apex:page sidebar="true" standardController="Employee__c">
+        
+  <wave:dashboard dashboardId="01ZfI000002LfmzUAC" 
+        showTitle="true" 
+        height="800px"/>
+        
+</apex:page>

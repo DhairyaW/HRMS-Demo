@@ -1,0 +1,104 @@
+<template>
+    <lightning-card>
+        <lightning-tabset>
+            <lightning-tab label="Welcome" title="Welcome">
+                <h1>Good Morning,</h1>
+                <br>
+                <p>Let's achieve great things together!</p>
+                <br>
+                <br>
+                <br>
+                <div class="my-favourites">
+                    <h2>Quick Actions:</h2>
+                    <br>
+                    <lightning-layout>
+                        <lightning-layout-item class="slds-p-left_small slds-p-right_medium">
+                            <div class="button-container" onclick={showEmployeeModalBox}>
+                                <div class="icon-container">
+                                    <lightning-icon icon-name="utility:user" size="medium" alternative-text="User"></lightning-icon>
+                                </div>
+                                <p class="label">Add Employee</p>
+                            </div>
+                        </lightning-layout-item>
+                        <lightning-layout-item>
+                            <div class="button-container" onclick={showHolidayModalBox}>
+                                <div class="icon-container">
+                                    <lightning-icon icon-name="utility:date_input" size="medium" alternative-text="Holiday"></lightning-icon>
+                                </div>
+                                <p class="label">Add Holiday</p>
+                            </div>
+                        </lightning-layout-item>
+                    </lightning-layout>
+
+                    <br>
+                    <template if:true={isShowEmployeeModal}>
+                        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                            <div class="slds-modal__container">
+                                <!-- modal header start -->
+                                <header class="slds-modal__header">
+                                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={hideEmployeeModalBox}>
+                                <lightning-icon icon-name="utility:close"
+                                    alternative-text="close"
+                                    variant="inverse"
+                                    size="small" ></lightning-icon>
+                                    <span class="slds-assistive-text">Close</span>
+                                </button>
+                                <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Employee Details</h2>
+                                </header>
+                         
+                                <!-- modal body start -->
+                                <lightning-record-form 
+                                    style="background-color:white;"
+                                    title="Employee Record Form"
+                                    object-api-name="Employee__c"
+                                    fields={Employeefields}
+                                    oncancel={hideEmployeeModalBox}
+                                    onsuccess={handleAddEmployeeSuccess}>
+                                </lightning-record-form>                         
+                            </div>
+                        </section>
+                        <div class="slds-backdrop slds-backdrop_open"></div>
+                    </template>
+
+                    <template if:true={isShowHolidayModal}>
+                        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                            <div class="slds-modal__container">
+                                <!-- modal header start -->
+                                <header class="slds-modal__header">
+                                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={hideHolidayModalBox}>
+                                <lightning-icon icon-name="utility:close"
+                                    alternative-text="close"
+                                    variant="inverse"
+                                    size="small" ></lightning-icon>
+                                    <span class="slds-assistive-text">Close</span>
+                                </button>
+                                <h2 id="modal-heading-02" class="slds-text-heading_medium slds-hyphenate">Holiday Details</h2>
+                                </header>
+                         
+                                <!-- modal body start -->
+                                <lightning-record-form 
+                                    style="background-color:white;"
+                                    title="Holiday Record Form"
+                                    object-api-name="Holiday__c"
+                                    fields={holidayFields}
+                                    oncancel={hideHolidayModalBox}
+                                    onsuccess={handleAddHolidaySuccess}>
+                                </lightning-record-form>                         
+                            </div>
+                        </section>
+                        <div class="slds-backdrop slds-backdrop_open"></div>
+                    </template>
+
+                </div>
+            </lightning-tab>
+            <lightning-tab label="Dashboard" title="Dashboard">
+                <iframe
+                    src="https://hrmsdevelopmentorg-dev-ed.develop.lightning.force.com/lightning/r/Dashboard/01ZfI000002LfmzUAC/view"
+                    width="100%"
+                    height="600px"
+                    frameborder="0">
+                </iframe>
+            </lightning-tab>
+        </lightning-tabset>
+    </lightning-card>
+</template>

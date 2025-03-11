@@ -1,0 +1,42 @@
+<template>
+    <lightning-card>
+        <lightning-tabset>
+            <lightning-tab label="Overview" title="Overview">
+                <div>
+                    <h1>Employees Head Count: {numOfEmployees}</h1>
+                    <br>
+                    <h1>New Joiners for last month: {newJoiners}</h1>
+                </div>
+            </lightning-tab>
+            <lightning-tab label="Employee List" title="Employee List">
+                <lightning-datatable title="All Employee info"
+                    key-field="Id"
+                    columns={allEmployeeColumns} 
+                    data={allEmployees} 
+                    hide-checkbox-column>
+                </lightning-datatable>
+            </lightning-tab>
+            <lightning-tab label="Org Chart" title="Org Chart">
+                <c-org-chart></c-org-chart>
+            </lightning-tab>
+            <lightning-tab label="Bank" title="Bank">
+                <lightning-select
+                    name="Employee"
+                    label="Choose Employee"
+                    value={selectedEmployeeId}
+                    options={employeeNames}
+                    onchange={handleEmployeeChange} >
+                </lightning-select>
+                <br><br>
+                <div if:true={isEmployeeSelected}>
+                    <lightning-datatable title="Employee Bank Info"
+                        key-field="Id"
+                        data={bankInfo}
+                        columns={bankInfoColumns}
+                        hide-checkbox-column>
+                    </lightning-datatable>
+                </div>
+            </lightning-tab>
+        </lightning-tabset>
+    </lightning-card>
+</template>

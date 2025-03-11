@@ -1,0 +1,66 @@
+/* .logo {
+    width: 100px;
+    padding-left: 20px;
+    padding-bottom: 5px;
+}
+
+.navContainer {
+    width: 220px;
+    background-color: lightblue;
+    color: white;
+    text-align: left;
+    justify-content: center;
+    border-right: 1px ;
+    align-items: center;
+}
+
+.navButtons:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.navButtons {
+    padding-top: 20px;
+    font-size: 18px;
+    position: absolute;
+}
+
+.loginButton {
+    position: inherit;
+} */
+
+.sidebar{
+    height:90vh;
+    max-width: 18%;
+}
+.sidebar-button{    
+    width: 20px;
+}
+.open-panel {
+    width: 17%;
+    overflow:hidden;
+    transition: 0.3s;
+}
+.close-panel {
+    width: 0px;
+    min-width: 0px;
+    overflow:unset;
+    transition: 0.3s;
+}
+.expand-panel{
+    width: 99.5%;
+    transition: 0.3s;
+}
+.collapse-panel{
+    width: 82.5%;
+    transition: 0.3s;
+}
+.page-section {
+    border: solid 1px #ccc;
+    padding: .25rem;
+    background-color: #fff;
+}
+
+.refreshRotate {
+    animation: rotate .4s;
+}

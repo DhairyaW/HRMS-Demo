@@ -1,0 +1,188 @@
+<!-- <template>
+    <lightning-card>
+        <div class="navContainer slds-grid">
+            <div class="slds-col slds-size_2-of-10">
+                <img class="logo" src={logo} alt="Metadologie logo" />
+            </div>
+            <div class="slds-col slds-size_1-of-10">
+                <h1 class="navButtons" onclick={homeFunction}>Home</h1>
+            </div>
+            <div class="slds-col slds-size_1-of-10">
+                <h1 class="navButtons" onclick={taskFunction}>Tasks</h1>
+            </div>
+            <div class="slds-col slds-size_2-of-10">
+                <h1 class="navButtons" onclick={performanceFunction}>Performance Management</h1>
+            </div>
+            <div class="slds-col slds-size_1-of-10">
+                <h1 class="navButtons" onclick={employeeFunction}>Employee</h1>
+            </div>
+            <div class="slds-col slds-size_1-of-10">
+                <h1 class="navButtons" onclick={payrollFunction}>Payroll</h1>
+            </div>
+            <div class="slds-col slds-size_1-of-10">
+                <h1 class="navButtons" onclick={leaveFunction}>Leave</h1>
+            </div>
+            <div class="slds-col slds-size_1-of-10">
+                <lightning-button class="loginButton" label="login" onclick={handleLogin}></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template> -->
+
+<!-- <template>
+    <lightning-card>
+        <div class="navContainer">
+            <ul>
+                <li>
+                    <img class="logo" src={logo} alt="Metadologie logo" />
+                </li>
+                <li>
+                    <h1 class="navButtons" onclick={homeFunction}>Home</h1>
+                </li>
+                <li>
+                    <h1 class="navButtons" onclick={taskFunction}>Tasks</h1>
+                </li>
+                <li>
+                    <h1 class="navButtons" onclick={performanceFunction}>Performance Management</h1>
+                </li>
+                <li>
+                    <h1 class="navButtons" onclick={employeeFunction}>Employee</h1>
+                </li>
+                <li>
+                    <h1 class="navButtons" onclick={payrollFunction}>Payroll</h1>
+                </li>
+                <li>
+                    <h1 class="navButtons" onclick={leaveFunction}>Leave</h1>
+                </li>
+            </ul>
+            <div class="slds-col slds-size_1-of-10">
+                <lightning-button class="loginButton" label="login" onclick={handleLogin}></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template> -->
+
+<!-- <template>
+    <div class="navContainer">
+        <lightning-vertical-navigation>
+            <lightning-vertical-navigation-section label="Navigation">
+                <lightning-vertical-navigation-item label="Home" name="home" href="/"></lightning-vertical-navigation-item>
+                <lightning-vertical-navigation-item label="Tasks" name="tasks" href="/tasks"></lightning-vertical-navigation-item>
+                <lightning-vertical-navigation-item label="Performance Management" name="performance" href="/performance"></lightning-vertical-navigation-item>
+                <lightning-vertical-navigation-item label="Employee" name="employee" href="/employee"></lightning-vertical-navigation-item>
+                <lightning-vertical-navigation-item label="Payroll" name="payroll" href="/payroll"></lightning-vertical-navigation-item>
+                <lightning-vertical-navigation-item label="Leave" name="leave" href="/leave"></lightning-vertical-navigation-item>
+                <lightning-vertical-navigation-item label="Reports" name="Reports" href="/Reports"></lightning-vertical-navigation-item>
+            </lightning-vertical-navigation-section>
+            <lightning-vertical-navigation-section label="Resources">
+                <lightning-vertical-navigation-item
+                    label="Salesforce"
+                    name="salesforce"
+                    href="https://www.salesforce.com/">
+                </lightning-vertical-navigation-item>
+
+                <lightning-vertical-navigation-item
+                    label="Salesforce Developers"
+                    name="developers"
+                    href="https://developer.salesforce.com/">
+                </lightning-vertical-navigation-item>
+
+                <lightning-vertical-navigation-item
+                    label="Trailhead"
+                    name="trailhead"
+                    href="https://trailhead.salesforce.com">
+                </lightning-vertical-navigation-item>
+            </lightning-vertical-navigation-section>
+        </lightning-vertical-navigation>
+    </div>
+</template> -->
+
+<template>
+    <div class="sidebar slds-split-view_container slds-is-closed close-panel" data-my-id="leftPanel"
+        style="float: left">
+        <lightning-button-icon onclick={togglePanel} variant="bare" icon-name="utility:list"
+            class="slds-button slds-button_icon slds-button_icon slds-split-view__toggle-button sidebar-button"
+            aria-controls="split-view-id" aria-expanded="true">
+        </lightning-button-icon>
+        <article aria-hidden="false" id="split-view-id" class="slds-split-view slds-grid slds-grid_vertical slds-grow"
+            style="padding-right: 7px">
+            <lightning-vertical-navigation selected-item={selectedNav} onselect={handleSelect}>
+                <lightning-vertical-navigation-section label="Metadologie">
+                    <lightning-vertical-navigation-item-icon label="Home" name="Home"
+                        icon-name="utility:home">
+                    </lightning-vertical-navigation-item-icon>
+
+                    <lightning-vertical-navigation-item-icon label="Tasks" name="Tasks"
+                        icon-name="utility:task">
+                    </lightning-vertical-navigation-item-icon>
+
+                    <lightning-vertical-navigation-item-icon label="Performance Management" name="Performance Management"
+                        icon-name="utility:indicator_performance_period">
+                    </lightning-vertical-navigation-item-icon>
+
+                    <lightning-vertical-navigation-item-icon label="Employee" name="Employee"
+                        icon-name="utility:groups">
+                    </lightning-vertical-navigation-item-icon>
+
+                    <lightning-vertical-navigation-item-icon label="Leave" name="Leave"
+                        icon-name="utility:resource_absence">
+                    </lightning-vertical-navigation-item-icon>
+
+                    <lightning-vertical-navigation-item-icon label="Payroll" name="Payroll"
+                        icon-name="utility:moneybag">
+                    </lightning-vertical-navigation-item-icon>
+
+                    <lightning-vertical-navigation-item-icon label="Reports" name="Reports"
+                        icon-name="utility:service_report">
+                    </lightning-vertical-navigation-item-icon>
+
+                    <lightning-vertical-navigation-item-icon label="Expense Claim" name="Expense Claim"
+                        icon-name="utility:money">
+                    </lightning-vertical-navigation-item-icon>
+                </lightning-vertical-navigation-section>
+            </lightning-vertical-navigation>
+        </article>
+    </div>
+
+    <div style="float:right;padding-left:10px;" data-my-id="rightPanel" class="expand-panel">
+        <!--Main Right Body Section-->
+        <lightning-card title={selectedNav} icon-name="standard:account" class="slds-m-bottom_small">
+            <button class="slds-button slds-button_icon slds-button_icon-border slds-m-left_x-small" slot="actions" title="Refresh" alternative-text="Refresh" onclick={refreshUserData}>
+            <svg class="slds-button__icon" aria-hidden="true">
+                <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg?cache=9.28.0#refresh"></use>
+            </svg>
+        </button>
+        <div if:true={isTasksSelected}>
+            <c-tasks-component></c-tasks-component>
+        </div>
+        <div if:true={isHomeSelected}>
+            <c-home-component></c-home-component>
+        </div>
+        <div if:true={isPerformanceManagementSelected}>
+            <c-performance-management-component></c-performance-management-component>
+        </div>
+        <div if:true={isAEmployeeSelected}>
+            <c-employee-component></c-employee-component>
+        </div>
+        <div if:true={isPayrollSelected}>
+            <c-payroll-component></c-payroll-component>
+        </div>
+        <div if:true={isLeaveSelected}>
+            <c-leave-component></c-leave-component>
+        </div>
+        <div if:true={isReportsSelected}>
+            <c-reports-component></c-reports-component>
+        </div>
+        <div if:true={isExpenseClaimSelected}>
+            <c-expense-claim-component></c-expense-claim-component>
+        </div>
+        </lightning-card>
+        <article
+            class="slds-grid slds-grid_vertical slds-grow slds-scrollable_none slds-m-top_x-small slds-m-bottom_x-large"
+            style="height:84vh">
+            <div class=" slds-grid slds-grid_vertical slds-scrollable_y">
+
+            </div>
+        </article>
+    </div>
+</template>

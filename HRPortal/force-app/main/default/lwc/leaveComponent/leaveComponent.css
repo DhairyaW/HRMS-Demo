@@ -1,0 +1,18 @@
+.button-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    flex: 1;
+    min-width: 200px;
+    max-width: 30%;
+    padding-left: 6px;
+}
+
+.newLeave-button{
+    flex-shrink: 0;
+    /* padding-bottom: 18px; */
+}

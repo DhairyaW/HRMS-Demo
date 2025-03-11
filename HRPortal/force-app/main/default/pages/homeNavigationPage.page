@@ -1,0 +1,15 @@
+<apex:page showHeader="false" sidebar="false">
+    <apex:includeLightning />    
+    <div id="homeNavigationComponent" />    
+    <script>
+    $Lightning.use("c:HomePageApp", function() {
+        $Lightning.createComponent("c:homeNavigationComponent",
+          { 
+          },
+          "homeNavigationComponent",
+          function(cmp) {
+             console.log('LWC Componenet added in VF page');
+          });
+    }); 
+    </script>
+</apex:page>
